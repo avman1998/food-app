@@ -1,16 +1,18 @@
-const RestaurantCard = () => {
+const RestaurantCard = ({ restaurant }) => {
+  const { cloudinaryImageId, name, avgRating, sla, cuisines } = restaurant.info;
   return (
-    <div className="flex flex-col gap-1 w-44 border border-black p-2 m-2 cursor-pointer">
+    <div className="w-60 m-2 p-2 bg-gray  hover:shadow-lg  break-all flex flex-col items-center gap-1 cursor-pointer">
       <img
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/d0450ce1a6ba19ea60cd724471ed54a8"
+        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
         alt="res-logo"
+        className="w-44"
       />
-      <p>Domino's Pizza</p>
+      <p className="font-bold text-gray-800 text-[80%]">{name}</p>
       <div>
-        <p>4.3 star</p>
-        <p>30 mins</p>
+        <p>{avgRating} ⭐</p>
+        <p>{sla?.deliveryTime} mins</p>
       </div>
-      <p>Pizzas, Italian, Pastas, Desserts Meghdoot Park Road</p>
+      <p className="flex flex-wrap  text-[70%]">{cuisines.join(",")}</p>
     </div>
   );
 };

@@ -1,9 +1,10 @@
+import { RES_IMG_URL } from "../utils";
 const RestaurantCard = ({ restaurant }) => {
   const { cloudinaryImageId, name, avgRating, sla, cuisines } = restaurant.info;
   return (
     <div className="w-60 m-2 p-2 bg-gray  hover:shadow-lg  break-all flex flex-col items-center gap-1 cursor-pointer">
       <img
-        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
+        src={`${RES_IMG_URL}${cloudinaryImageId}`}
         alt="res-logo"
         className="w-44"
       />

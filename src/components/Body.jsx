@@ -1,4 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 import { RESTAURANTS_API } from "../utils";
 import { useState, useEffect } from "react";
 const Body = () => {
@@ -19,6 +20,7 @@ const Body = () => {
     );
     setListOfRestaurants(filteredRestaurants);
   }
+  if (listOfRestaurants.length === 0) return <Shimmer />;
   return (
     <>
       <button onClick={topRatedRes}>Top rated restuarants</button>

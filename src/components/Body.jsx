@@ -1,8 +1,18 @@
 import RestaurantCard from "./RestaurantCard";
-import { restaurants } from "../config";
-import { useState } from "react";
+import { RESTAURANTS_API } from "../utils";
+import { useState, useEffect } from "react";
 const Body = () => {
-  const [listOfRestaurants, setListOfRestaurants] = useState(restaurants);
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
+  async function fetchProducts() {
+    const res = await fetch(RESTAURANTS_API);
+    const data = await res.json();
+    setListOfRestaurants(
+      data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  }
+  useEffect(() => {
+    fetchProducts();
+  }, []);
   function topRatedRes() {
     const filteredRestaurants = listOfRestaurants.filter(
       (res) => res?.info?.avgRating > 4

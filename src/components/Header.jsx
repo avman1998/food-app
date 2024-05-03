@@ -1,4 +1,5 @@
 import { LOGO_URL } from "../utils";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <nav className="flex justify-between items-center border border-black">
@@ -8,7 +9,9 @@ const Header = () => {
       <section className="m-2">
         <ul className="flex gap-4">
           <li className="cursor-pointer font-bold ">Home</li>
-          <li className="cursor-pointer font-bold">About</li>
+          <Link to="/about">
+            <li className="cursor-pointer font-bold">About</li>
+          </Link>
           <li className="cursor-pointer font-bold">Contact</li>
           <li className="cursor-pointer font-bold">Cart</li>
         </ul>

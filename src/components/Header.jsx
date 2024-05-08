@@ -8,11 +8,15 @@ const Header = () => {
       </section>
       <section className="m-2">
         <ul className="flex gap-4">
-          <li className="cursor-pointer font-bold ">Home</li>
+          <Link to="/">
+            <li className="cursor-pointer font-bold ">Home</li>
+          </Link>
           <Link to="/about">
             <li className="cursor-pointer font-bold">About</li>
           </Link>
-          <li className="cursor-pointer font-bold">Contact</li>
+          <Link to="/contact">
+            <li className="cursor-pointer font-bold">Contact</li>
+          </Link>
           <li className="cursor-pointer font-bold">Cart</li>
         </ul>
       </section>

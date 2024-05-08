@@ -1,10 +1,11 @@
 import Header from "./components/Header";
-import Body from "./components/Body";
+import { Outlet } from "react-router-dom";
 function App() {
+  console.log("Outlet", Outlet);
   return (
     <div className="p-3">
       <Header />
-      <Body />
+      <Outlet />
     </div>
   );
 }

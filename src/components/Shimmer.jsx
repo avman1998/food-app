@@ -1,6 +1,5 @@
 const Shimmer = () => {
   let shimmer = new Array(10).fill("");
-  console.log("shimmer", shimmer);
   return (
     <div
       className="flex flex-wrap gap-3

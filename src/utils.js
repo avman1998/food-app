@@ -6,3 +6,7 @@ export const RES_IMG_URL =
 
 export const RESTAURANTS_API =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.75935&lng=75.864946&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+export const menu_url = (res_id) => {
+  return `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.75935&lng=75.864946&restaurantId=${res_id}&catalog_qa=undefined&isMenuUx4=true&submitAction=ENTER`;
+};

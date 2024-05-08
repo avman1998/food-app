@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { RESTAURANTS_API } from "../utils";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -55,7 +56,9 @@ const Body = () => {
       <button onClick={topRatedRes}>Top rated restuarants</button>
       <div className="border border-black my-2 flex flex-wrap justify-between items-center">
         {filteredRestaurants?.map((res) => (
-          <RestaurantCard key={res?.info?.id} restaurant={res} />
+          <Link to={`/restaurant/${res.info.id}`}>
+            <RestaurantCard key={res?.info?.id} restaurant={res} />
+          </Link>
         ))}
       </div>
     </>

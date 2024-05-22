@@ -1,6 +1,9 @@
 import { LOGO_URL } from "../utils";
 import { Link } from "react-router-dom";
+import useOnline from "../custom-hooks/useOnline";
 const Header = () => {
+  const isOnline = useOnline();
+
   return (
     <nav className="flex justify-between items-center border border-black">
       <section className="m-2">
@@ -8,6 +11,7 @@ const Header = () => {
       </section>
       <section className="m-2">
         <ul className="flex gap-4">
+          <li>Online status: {isOnline ? "✅" : "🔴"}</li>
           <Link to="/">
             <li className="cursor-pointer font-bold ">Home</li>
           </Link>
